@@ -1,0 +1,106 @@
+<html>
+
+<head>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;    
+            justify-content: center;    
+        }
+
+        h1 {
+            text-align: center;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        video {
+            height: 100%;
+            width: 100%;
+        }
+        
+        .videos {
+            display: flex;
+            flex-direction: row;    
+            justify-content: center;
+        }
+
+        .titles {
+            display: flex;
+            flex-direction: row;    
+            justify-content: center;   
+        }
+
+        .titles div {
+            width: 220px;
+            height: 40px;
+            margin: 0 10px;
+            text-align: center;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .video {
+            height: 220px;
+            width: 220px;
+            margin: 0 10px;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Compress Tae Fook</h1>
+
+    <div class="videos">
+        <div class="video">
+            <video src="1.mp4" loop muted />
+        </div>
+
+        <div class="video">
+            <video src="2.mp4" loop muted />
+        </div>
+
+        <div class="video">
+            <video src="3.mp4" loop muted />
+        </div>
+    </div>
+
+    <div class="titles">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+
+    <div class="controls">
+        <button id="play">Play</button>
+        <button id="pause">Pause</button>
+        <button id="restart">Restart</button>
+    </div>
+
+<script>
+
+document.getElementById('play').addEventListener("click", () => {
+    Array.from(document.getElementsByTagName('video')).forEach(element => element.play());
+})
+
+document.getElementById('pause').addEventListener("click", () => {
+    Array.from(document.getElementsByTagName('video')).forEach(element => element.pause());
+})
+
+document.getElementById('pause').addEventListener("click", () => {
+    Array.from(document.getElementsByTagName('video')).forEach(element => element.currentTime = 0);
+})
+
+
+</script>
+</body>
+</html>
